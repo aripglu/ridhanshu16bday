@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff1a8">
+  <meta name="description" content="A pastel Roblox-inspired birthday world celebrating a very special sixteenth birthday on 26 January 2027.">
+  <meta property="og:title" content="Level 16: A Birthday World Made With Love">
+  <meta property="og:description" content="A loud, lovely pastel birthday adventure for 26 January 2027.">
+  <title>Level 16 | Birthday World</title>
+
+  <!-- FONT EDIT: Swap these Google Fonts links and the font names in styles.css. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="gate-active">
+  <!-- ============================================================
+       LOGIN PAGE EDITS
+       Search for "LOGIN EDIT" to change the labels, hint, or access details.
+       This is a cute front-end gate, not secure account authentication.
+       ============================================================ -->
+  <div class="entry-gate" id="entryGate" aria-live="polite">
+    <section class="gate-page login-page" id="loginPage" aria-labelledby="loginTitle">
+      <div class="gate-doodles" aria-hidden="true"><span>★</span><span>♡</span><span>+</span><span>⌁</span></div>
+      <form class="login-card" id="loginForm" novalidate>
+        <!-- LOGIN EDIT: Change the tiny label below. -->
+        <p class="gate-kicker">PRIVATE SERVER · INVITE ONLY</p>
+        <!-- LOGIN EDIT: Change the login heading and intro below. -->
+        <h1 id="loginTitle">prove it's<br>really you.</h1>
+        <p class="gate-intro">One tiny security check before the birthday lore drops.</p>
+
+        <label for="gateUsername">Username</label>
+        <div class="gate-input-wrap"><span aria-hidden="true">@</span><input id="gateUsername" name="username" type="text" autocomplete="username" autocapitalize="characters" spellcheck="false" required autofocus></div>
+        <label for="gatePassword">Password</label>
+        <div class="gate-input-wrap"><span aria-hidden="true">✦</span><input id="gatePassword" name="password" type="password" autocomplete="current-password" required><button class="password-toggle" id="passwordToggle" type="button" aria-label="Show password">SHOW</button></div>
+
+        <!-- LOGIN EDIT: Change the hint text below. -->
+        <div class="login-hint"><b>NEED A HINT?</b><p>Username: Your name in Capitals.<br>Password: Your birthdate in DDMMYYYY format</p></div>
+        <p class="gate-error" id="loginError" role="alert"></p>
+        <!-- LOGIN EDIT: Change the button label below. -->
+        <button class="gate-button" type="submit">LOG IN <span aria-hidden="true">↗</span></button>
+      </form>
+    </section>
+
+    <!-- ==========================================================
+         DISCLAIMER PAGE EDITS
+         Search for "DISCLAIMER EDIT" and replace the paragraphs.
+         Add more <p>...</p> lines inside .disclaimer-copy if needed.
+         ========================================================== -->
+    <section class="gate-page disclaimer-page" id="disclaimerPage" aria-labelledby="disclaimerTitle" hidden>
+      <article class="disclaimer-card">
+        <!-- DISCLAIMER EDIT: Change this small label. -->
+        <p class="gate-kicker">BEFORE YOU ENTER · PLEASE READ</p>
+        <!-- DISCLAIMER EDIT: Change the disclaimer heading. -->
+        <h1 id="disclaimerTitle">tiny disclaimer,<br>big feelings.</h1>
+        <div class="disclaimer-copy">
+          <!-- DISCLAIMER EDIT: Replace this paragraph with your first disclaimer paragraph. -->
+          <p>YOUR FIRST DISCLAIMER PARAGRAPH GOES HERE.</p>
+          <!-- DISCLAIMER EDIT: Replace this paragraph with your second disclaimer paragraph. -->
+          <p>YOUR SECOND DISCLAIMER PARAGRAPH GOES HERE.</p>
+          <!-- DISCLAIMER EDIT: Copy a <p> line to add more paragraphs. -->
+        </div>
+        <!-- DISCLAIMER EDIT: Change the closing note below. -->
+        <p class="disclaimer-note">By tapping okay, you confirm you read the note above and are ready to enter.</p>
+        <!-- DISCLAIMER EDIT: Change the button label below. -->
+        <button class="gate-button" id="acceptDisclaimer" type="button">OKAY, LET ME IN <span aria-hidden="true">→</span></button>
+      </article>
+    </section>
+  </div>
+
+  <div class="site-content" id="siteContent" aria-hidden="true" inert>
+  <div class="petal-layer" id="petalLayer" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="game-bar">
+    <div class="logo" aria-label="Lovecrafted birthday world">
+      <span class="logo-cube" aria-hidden="true"></span>
+      <span>LOVECRAFTED</span>
+    </div>
+    <div class="quest-progress" aria-live="polite"><span id="pageLabel">HOME</span><b id="pageCount">01 / 05</b></div>
+    <button class="sound-button" id="soundButton" type="button" aria-pressed="false">
+      <span class="sound-icon" aria-hidden="true">♪</span><span id="soundLabel">party sounds: off</span>
+    </button>
+  </header>
+
+  <main id="home">
+    <div class="story-page is-active" data-story-page="home" aria-labelledby="homeTitle">
+    <section class="hero section-shell">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><span class="online-dot"></span> SERVER OPENS · 26 JAN 2027</div>
+        <p class="tiny-label">achievement unlocked</p>
+        <h1 id="homeTitle">LEVEL<br><span>16</span></h1>
+        <p class="hero-sub">A whole birthday world, built block by block for my favourite player.</p>
+        <div class="hero-actions">
+          <button class="pixel-button primary" data-popup="welcomePopup" type="button">Enter birthday server</button>
+          <button class="pixel-button secondary" data-story-next type="button">Start quest →</button>
+        </div>
+      </div>
+
+      <div class="hero-world reveal" aria-label="A pastel block character in a floral game world">
+        <div class="sunburst"></div>
+        <div class="cloud cloud-one"></div><div class="cloud cloud-two"></div>
+        <div class="floating-cube cube-a">16</div><div class="floating-cube cube-b">XP</div>
+        <div class="block-avatar" aria-hidden="true">
+          <div class="avatar-hair"></div><div class="avatar-head"><span></span></div>
+          <div class="avatar-arm left"></div><div class="avatar-body"><b>LVL<br>16</b></div><div class="avatar-arm right"></div>
+          <div class="avatar-leg left"></div><div class="avatar-leg right"></div>
+        </div>
+        <div class="lotus lotus-left" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="lily lily-right" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><b></b></div>
+        <div class="game-platform"><span></span><span></span><span></span><span></span></div>
+        <div class="status-card"><span>birthday aura</span><strong>MAXED OUT</strong><div><i></i></div></div>
+      </div>
+    </section>
+
+    <section class="countdown-wrap" aria-label="Countdown to the birthday">
+      <div class="marquee"><div>LOTUS MODE · SIXTEEN ERA · BIRTHDAY LORE · MAIN CHARACTER ENERGY ·&nbsp;</div></div>
+      <div class="countdown section-shell">
+        <div><span id="days">000</span><small>days</small></div><b>:</b>
+        <div><span id="hours">00</span><small>hours</small></div><b>:</b>
+        <div><span id="minutes">00</span><small>mins</small></div><b>:</b>
+        <div><span id="seconds">00</span><small>secs</small></div>
+      </div>
+    </section>
+    </div>
+
+    <section class="wish-section section-shell story-page" id="wish" data-story-page="wish" aria-labelledby="wishPageTitle" hidden>
+      <div class="section-number">QUEST 01 / 03</div>
+      <div class="wish-window reveal">
+        <div class="window-bar"><span><i></i><i></i><i></i></span><strong>BIRTHDAY_WISH.txt</strong><button type="button" data-popup="wishHelp" aria-label="Open editing help">?</button></div>
+        <div class="wish-content">
+          <div class="quest-stamp">MAIN QUEST</div>
+          <h2 id="wishPageTitle">Your birthday wish<br>goes right here.</h2>
+          <!-- ✎ WISH EDIT: Put your birthday wish inside the empty paragraph below. -->
+          <p class="editable-space" id="birthdayWish" data-placeholder="YOUR WISH GOES HERE"></p>
+          <button class="pixel-button primary" data-popup="photoPopup1" type="button">Open memory drop</button>
+        </div>
+        <aside class="inventory">
+          <p>LOVE INVENTORY</p>
+          <button data-popup="miniPopup1" type="button"><span>∞</span><small>inside jokes</small></button>
+          <button data-popup="miniPopup2" type="button"><span>16</span><small>new memories</small></button>
+          <button data-popup="miniPopup3" type="button"><span>1</span><small>favourite human</small></button>
+        </aside>
+      </div>
+      <div class="page-advance"><p>Quest 01 complete</p><div class="page-nav-actions"><button class="pixel-button secondary" data-story-back type="button">← Back</button><button class="pixel-button primary" data-story-next type="button">Next quest →</button></div></div>
+    </section>
+
+    <section class="letter-section section-shell story-page" id="letter" data-story-page="letter" aria-labelledby="letterPageTitle" hidden>
+      <div class="section-number">QUEST 02 / 03</div>
+      <div class="letter-layout">
+        <div class="letter-art reveal">
+          <div class="polaroid tilted" role="button" tabindex="0" data-popup="photoPopup2"><div class="photo-slot">ADD<br>PHOTO</div><p>us.zip</p></div>
+          <div class="flower-orbit"><span>LOTUS</span></div>
+          <svg class="krishna-mark" viewBox="0 0 240 240" role="img" aria-label="Peacock feather and flute, a symbol of Krishna">
+            <path d="M72 207c35-74 69-112 107-155" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+            <path d="M178 49c-40-17-70 17-47 49 17 23 52 9 55-17 2-13-2-23-8-32Z" fill="#a9e6cc" stroke="currentColor" stroke-width="6"/>
+            <ellipse cx="159" cy="72" rx="16" ry="23" fill="#7d79d8"/><ellipse cx="159" cy="72" rx="7" ry="12" fill="#f8cf66"/>
+            <path d="M45 175 205 129" stroke="#d4a34c" stroke-width="14" stroke-linecap="round"/><path d="m64 162 9 25m93-57 9 25" stroke="#51465f" stroke-width="4"/>
+            <circle cx="97" cy="161" r="4" fill="#51465f"/><circle cx="122" cy="154" r="4" fill="#51465f"/><circle cx="147" cy="147" r="4" fill="#51465f"/>
+          </svg>
+          <p class="blessing">a little feather, a little faith,<br>a lot of love</p>
+        </div>
+        <article class="letter-paper reveal">
+          <div class="tape">OPEN WHEN YOU TURN 16</div>
+          <p class="letter-date">26 . 01 . 2027</p>
+          <h2 id="letterPageTitle">A letter for<br>my player two</h2>
+          <!-- ✎ LETTER EDIT: Replace the placeholder inside this div with your full letter. Use <p>...</p> for each paragraph. -->
+          <div class="letter-empty" data-placeholder="YOUR LETTER GOES HERE"></div>
+          <div class="signature-line">with all my love, <span>__________</span></div>
+          <button class="sticker-button" data-popup="secretPopup" type="button">classified lore<br><b>DO NOT CLICK</b></button>
+        </article>
+      </div>
+      <div class="page-advance"><p>Quest 02 complete</p><div class="page-nav-actions"><button class="pixel-button secondary" data-story-back type="button">← Back</button><button class="pixel-button primary" data-story-next type="button">Next quest →</button></div></div>
+    </section>
+
+    <section class="notes-section story-page" id="notes" data-story-page="notes" aria-labelledby="notesPageTitle" hidden>
+      <div class="section-shell">
+        <div class="notes-heading">
+          <div><div class="section-number">FINAL QUEST / 03</div><h2 id="notesPageTitle">16 tiny notes<br>for level sixteen</h2></div>
+          <p>Tap every block to collect the lore.<br><span id="noteProgress">0 / 16 opened</span></p>
+        </div>
+        <!-- ✎ NOTES EDIT: Change each data-note="..." below. Keep the quote marks. -->
+        <div class="notes-grid" id="notesGrid">
+          <button class="note-block pink" data-number="01" data-note=""></button>
+          <button class="note-block yellow tall" data-number="02" data-note=""></button>
+          <button class="note-block mint" data-number="03" data-note=""></button>
+          <button class="note-block blue wide" data-number="04" data-note=""></button>
+          <button class="note-block peach" data-number="05" data-note=""></button>
+          <button class="note-block lilac tall" data-number="06" data-note=""></button>
+          <button class="note-block yellow" data-number="07" data-note=""></button>
+          <button class="note-block pink wide" data-number="08" data-note=""></button>
+          <button class="note-block mint" data-number="09" data-note=""></button>
+          <button class="note-block peach tall" data-number="10" data-note=""></button>
+          <button class="note-block blue" data-number="11" data-note=""></button>
+          <button class="note-block lilac wide" data-number="12" data-note=""></button>
+          <button class="note-block yellow" data-number="13" data-note=""></button>
+          <button class="note-block mint" data-number="14" data-note=""></button>
+          <button class="note-block pink tall" data-number="15" data-note=""></button>
+          <button class="note-block peach wide" data-number="16" data-note=""></button>
+        </div>
+        <div class="page-advance"><p>Final quest complete</p><div class="page-nav-actions"><button class="pixel-button secondary" data-story-back type="button">← Back</button><button class="pixel-button primary" data-story-next type="button">See the finale →</button></div></div>
+      </div>
+    </section>
+
+    <section class="finale section-shell story-page" data-story-page="finale" aria-labelledby="finaleTitle" hidden>
+      <div class="finale-card reveal">
+        <span class="crown">♕</span><p>SERVER BADGE AWARDED</p><h2 id="finaleTitle">Being sixteen looks<br>ridiculously good on you.</h2>
+        <button class="pixel-button primary" id="celebrateButton" type="button">Deploy celebration</button>
+        <button class="pixel-button secondary finale-home" data-story-home type="button">← Back to home page</button>
+        <small>made with a concerning amount of love &amp; zero chill</small>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>26 / 01 / 2027</span><p>ONE OF ONE · LIMITED EDITION BOYFRIEND</p><span>QUEST COMPLETE ✓</span></footer>
+
+  <!-- POPUPS: To add an image, replace the .photo-placeholder div with:
+       <img src="images/your-photo.jpg" alt="Describe the memory"> -->
+  <div class="modal" id="welcomePopup" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle" hidden><div class="modal-card game-modal"><button class="modal-close" aria-label="Close">×</button><span class="badge-icon">16</span><p>RARE BADGE FOUND</p><h2 id="welcomeTitle">Officially upgraded.</h2><p>Welcome to the birthday server. Side effects may include blushing, cake, and unbearable main-character energy.</p><button class="pixel-button primary modal-ok">Claim badge</button></div></div>
+  <div class="modal" id="wishHelp" role="dialog" aria-modal="true" aria-labelledby="helpTitle" hidden><div class="modal-card"><button class="modal-close" aria-label="Close">×</button><p>EDIT MODE</p><h2 id="helpTitle">Make it yours</h2><p>Open <b>index.html</b>, search for “WISH EDIT”, then type your wish inside the paragraph directly below it.</p></div></div>
+  <div class="modal" id="photoPopup1" role="dialog" aria-modal="true" aria-label="Memory photo" hidden><div class="modal-card photo-modal"><button class="modal-close" aria-label="Close">×</button><div class="photo-placeholder">YOUR POP-UP<br>IMAGE HERE</div><p>memory_01.png</p></div></div>
+  <div class="modal" id="photoPopup2" role="dialog" aria-modal="true" aria-label="Favourite photo" hidden><div class="modal-card photo-modal"><button class="modal-close" aria-label="Close">×</button><div class="photo-placeholder">YOUR POP-UP<br>IMAGE HERE</div><p>favourite_us.png</p></div></div>
+  <div class="modal" id="miniPopup1" role="dialog" aria-modal="true" aria-label="Inside jokes" hidden><div class="modal-card mini-modal"><button class="modal-close" aria-label="Close">×</button><h2>Canon event.</h2><p>Add your most unserious inside joke here.</p></div></div>
+  <div class="modal" id="miniPopup2" role="dialog" aria-modal="true" aria-label="Memories" hidden><div class="modal-card mini-modal"><button class="modal-close" aria-label="Close">×</button><h2>Memory slot unlocked.</h2><p>Add a tiny promise for the year ahead here.</p></div></div>
+  <div class="modal" id="miniPopup3" role="dialog" aria-modal="true" aria-label="Favourite human" hidden><div class="modal-card mini-modal"><button class="modal-close" aria-label="Close">×</button><h2>Actually goated.</h2><p>Respectfully, the competition never stood a chance.</p></div></div>
+  <div class="modal" id="secretPopup" role="dialog" aria-modal="true" aria-label="Secret lore" hidden><div class="modal-card secret-modal"><button class="modal-close" aria-label="Close">×</button><p>CLASSIFIED</p><h2>Bro clicked it.</h2><p>Put a secret message, private joke, or surprise link here.</p><!-- LINK EDIT: Example: <a href="https://example.com">Open surprise</a> --></div></div>
+  <div class="modal" id="notePopup" role="dialog" aria-modal="true" aria-labelledby="noteTitle" hidden><div class="modal-card note-modal"><button class="modal-close" aria-label="Close">×</button><p>LOVE NOTE <span id="noteNumber"></span> / 16</p><h2 id="noteTitle">A tiny piece of my heart</h2><div id="noteText"></div></div></div>
+  <div class="toast" id="toast" role="status" aria-live="polite">Celebration deployed!</div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
